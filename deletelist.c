@@ -58,3 +58,33 @@ void display(){
 int main(){
     int n, i, x, y, j = 0, k;
     printf("Enter number of elements: "); 
+    scanf("%d", &n);
+    printf("Insert the elements: ");
+    for(i = 0; i < n; i++){
+        scanf("%d", &x);
+        insert(x);
+    }
+    while(j < 5){
+        printf("\nEnter 1. Delete from beginning, 2. Delete from end, 3. Delete from particular position, 4. Display, 5. Exit \n");
+        scanf("%d", &k);
+        switch(k){
+            case 1:
+                deletefrombegin();
+                break;
+            case 2:
+                deletefromend();
+                break;
+            case 3:
+                printf("\nEnter the position to delete: ");
+                int z;
+                scanf("%d", &z);
+                deletefromposition(z);
+                break;
+            case 4:
+                display();
+                break;
+            default:
+                j = 5;
+        }
+    }
+}
